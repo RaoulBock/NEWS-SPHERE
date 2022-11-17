@@ -7,13 +7,18 @@ const BottomNav = () => {
     {
       id: 1,
       icon: APP_ICONS.HOME,
-      name: "Home",
+      name: "Home"
     },
     {
       id: 2,
       icon: APP_ICONS.BOOKMARK,
-      name: "Bookmark",
+      name: "Bookmark"
     },
+    {
+      id: 3,
+      icon: APP_ICONS.DISCOVER,
+      name: "Discover"
+    }
   ];
 
   return (
@@ -22,7 +27,7 @@ const BottomNav = () => {
         return (
           <TouchableOpacity key={i} style={styles.btn}>
             <Text>{e.icon}</Text>
-            {/* <Text>{e.name}</Text> */}
+            <Text>{e.name}</Text>
           </TouchableOpacity>
         );
       })}
@@ -39,9 +44,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     padding: 20,
     borderTopWidth: 1,
-    borderTopColor: "#eee",
+    borderTopColor: "#eee"
   },
   btn: {
-    alignItems: "center",
-  },
+    alignItems: "center"
+  }
 });

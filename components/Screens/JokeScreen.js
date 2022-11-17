@@ -4,7 +4,7 @@ import {
   View,
   Platform,
   StatusBar,
-  TouchableOpacity,
+  TouchableOpacity
 } from "react-native";
 import React from "react";
 import Nav from "../Nav/Nav";
@@ -18,7 +18,7 @@ const JokeScreen = () => {
     setUserCategory,
     setContent,
     setPageIndex,
-    pageIndex,
+    pageIndex
   } = React.useContext(AppContext);
 
   React.useEffect(() => {
@@ -71,32 +71,32 @@ export default JokeScreen;
 const styles = StyleSheet.create({
   outline: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
   },
   text: {
     color: "#404040",
     fontWeight: "600",
     paddingHorizontal: 20,
     fontSize: 28,
-    paddingVertical: 10,
+    paddingVertical: 10
   },
   category: {
     fontSize: 12,
     paddingHorizontal: 20,
     color: "#404040",
-    fontWeight: "600",
+    fontWeight: "600"
   },
   btn: {
     backgroundColor: "#eace2a",
     padding: 10,
     borderRadius: 50,
-    flexDirection: "row",
+    flexDirection: "row"
   },
   grid: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 20,
-    marginVertical: 20,
-  },
+    marginVertical: 20
+  }
 });

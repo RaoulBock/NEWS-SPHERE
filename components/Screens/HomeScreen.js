@@ -4,13 +4,14 @@ import {
   View,
   Platform,
   StatusBar,
-  TouchableOpacity,
+  TouchableOpacity
 } from "react-native";
 import React, { useContext } from "react";
 import Nav from "../Nav/Nav";
 import BottomNav from "../Nav/BottomNav";
 import { AppContext } from "../../context/AppContext";
 import { APP_PAGES } from "../../context/settings";
+import TextareaInput from "../Inputs/TextareaInput";
 
 const HomeScreen = () => {
   const { userCategory, setUserCategory, setNavPage, category } =
@@ -19,7 +20,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.outline}>
       <Nav title={"Home"} />
-      <View style={{ flex: 1, paddingLeft: 20 }}>
+      <View style={styles.view}>
         <Text style={styles.title}>Categories</Text>
         {category.map((e, i) => {
           return (
@@ -37,6 +38,10 @@ const HomeScreen = () => {
           );
         })}
       </View>
+      <View style={styles.view}>
+        <Text style={styles.title}>Discover</Text>
+        <TextareaInput placeholder={"Tell me something funny."} />
+      </View>
       <BottomNav />
     </View>
   );
@@ -47,19 +52,20 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   outline: {
     flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
   },
   textoutline: {
-    paddingBottom: 20,
+    paddingBottom: 20
   },
   text: {
     fontWeight: "600",
     color: "#404040",
-    fontSize: 20,
+    fontSize: 20
   },
   title: {
     color: "#404040",
     marginBottom: 10,
-    fontWeight: "500",
+    fontWeight: "500"
   },
+  view: { flex: 1, paddingLeft: 20 }
 });

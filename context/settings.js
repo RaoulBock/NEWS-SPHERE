@@ -1,8 +1,8 @@
 export const APP_PAGES = {
   APP: {
     HOME: "HOME",
-    JOKE_SCREEN: "JOKE_SCREEN",
-  },
+    JOKE_SCREEN: "JOKE_SCREEN"
+  }
 };
 
 import { Ionicons } from "react-native-vector-icons";
@@ -32,4 +32,10 @@ export const APP_ICONS = {
       style={{ color: "#fff", fontSize: 20 }}
     />
   ),
+  DISCOVER: (
+    <Ionicons
+      name="ios-compass-outline"
+      style={{ color: "#fff", fontSize: 20 }}
+    />
+  )
 };

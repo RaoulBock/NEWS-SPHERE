@@ -5,7 +5,7 @@ let previousPage = 0;
 
 export const AppContext = React.createContext({
   navPage: "",
-  setNavPage: (val) => {},
+  setNavPage: (val) => {}
 });
 
 const AppProvider = ({ children }) => {
@@ -19,24 +19,20 @@ const AppProvider = ({ children }) => {
   const category = [
     {
       id: 1,
-      name: "Any",
+      name: "Any"
     },
     {
       id: 2,
-      name: "Misc",
+      name: "Misc"
     },
     {
       id: 3,
-      name: "Dark",
+      name: "Dark"
     },
     {
       id: 4,
-      name: "Programming",
-    },
-    {
-      id: 5,
-      name: "Misc & Programming",
-    },
+      name: "Programming"
+    }
   ];
 
   React.useEffect(() => {
@@ -44,8 +40,8 @@ const AppProvider = ({ children }) => {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": "af913674e8mshd049bcd448bbeabp18f138jsn2ddff479839c",
-        "X-RapidAPI-Host": "jokeapi-v2.p.rapidapi.com",
-      },
+        "X-RapidAPI-Host": "jokeapi-v2.p.rapidapi.com"
+      }
     };
 
     const route =
@@ -62,7 +58,7 @@ const AppProvider = ({ children }) => {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         previousPage = pageIndex;
         setContent(response);
       })
@@ -80,7 +76,7 @@ const AppProvider = ({ children }) => {
         setContent,
         pageIndex,
         setPageIndex,
-        category,
+        category
       }}
     >
       {children}
