@@ -13,30 +13,8 @@ import { AppContext } from "../../context/AppContext";
 import { APP_PAGES } from "../../context/settings";
 
 const HomeScreen = () => {
-  const category = [
-    {
-      id: 1,
-      name: "Any",
-    },
-    {
-      id: 2,
-      name: "Misc",
-    },
-    {
-      id: 3,
-      name: "Dark",
-    },
-    {
-      id: 4,
-      name: "Programming",
-    },
-    {
-      id: 5,
-      name: "Misc & Programming",
-    },
-  ];
-
-  const { userCategory, setUserCategory, setNavPage } = useContext(AppContext);
+  const { userCategory, setUserCategory, setNavPage, category } =
+    useContext(AppContext);
 
   return (
     <View style={styles.outline}>

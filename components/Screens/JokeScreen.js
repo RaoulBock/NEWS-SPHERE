@@ -12,8 +12,18 @@ import { AppContext } from "../../context/AppContext";
 import { APP_ICONS, APP_PAGES } from "../../context/settings";
 
 const JokeScreen = () => {
-  const { setNavPage, content, setUserCategory, setContent } =
-    React.useContext(AppContext);
+  const {
+    setNavPage,
+    content,
+    setUserCategory,
+    setContent,
+    setPageIndex,
+    pageIndex,
+  } = React.useContext(AppContext);
+
+  React.useEffect(() => {
+    console.log(content);
+  }, [content]);
 
   return (
     <View style={styles.outline}>
@@ -36,13 +46,19 @@ const JokeScreen = () => {
       </View>
 
       <View style={styles.grid}>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => setPageIndex(pageIndex - 1)}
+        >
           <Text>{APP_ICONS.BACK}</Text>
         </TouchableOpacity>
         <TouchableOpacity>
           <Text>{APP_ICONS.BOOKMARK}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => setPageIndex(pageIndex + 1)}
+        >
           <Text>{APP_ICONS.RIGHT}</Text>
         </TouchableOpacity>
       </View>
