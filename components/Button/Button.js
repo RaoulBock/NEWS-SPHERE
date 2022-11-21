@@ -4,7 +4,7 @@ import React from "react";
 const Button = ({ title, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.btn}>
-      <Text style={styles.text}>{title}</Text>
+      <Text style={[styles.text, { fontFamily: "Pacifico" }]}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -13,17 +13,15 @@ export default Button;
 
 const styles = StyleSheet.create({
   btn: {
-    borderWidth: 1,
-    borderColor: "#eace2a",
-    padding: 8,
-    borderRadius: 4,
-    width: 100
+    borderRadius: 50,
+    backgroundColor: "#e81224",
+    padding: 15,
+    width: 150,
+    marginHorizontal: 15
   },
   text: {
-    textAlign: "center",
+    color: "white",
     fontWeight: "500",
-    color: "#eace2a",
-    marginTop: 10,
-    alignItems: "flex-end"
+    textAlign: "center"
   }
 });

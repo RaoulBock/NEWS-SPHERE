@@ -10,6 +10,8 @@ import {
 
 import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
+import Input from "../Inputs/Input";
+import Button from "../Button/Button";
 
 const image = {
   uri: "https://images.desenio.com/zoom/12608_2.jpg"
@@ -23,6 +25,18 @@ const HomeScreen = () => {
           <Text style={[styles.text, { fontFamily: "Pacifico" }]}>
             The Love Calculator ❤️
           </Text>
+          <Input placeholder={"His name"} />
+          <Input placeholder={"Her name"} />
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "center",
+            paddingVertical: 15,
+            backgroundColor: "#fff1f4c0"
+          }}
+        >
+          <Button title={"Calculate ❤️"} />
         </View>
       </ImageBackground>
     </View>
@@ -37,8 +51,8 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
   },
   image: {
-    flex: 1,
-    justifyContent: "center"
+    width: "100%",
+    height: "100%"
   },
   text: {
     color: "#404040",
@@ -50,7 +64,8 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#fff1f4c0",
     width: "100%",
-    height: "100%"
+    height: "100%",
+    flex: 1
   },
   text: {
     fontSize: 50,
