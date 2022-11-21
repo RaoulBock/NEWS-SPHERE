@@ -12,13 +12,14 @@ import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import Input from "../Inputs/Input";
 import Button from "../Button/Button";
+import { APP_PAGES } from "../../context/settings";
 
 const image = {
   uri: "https://images.desenio.com/zoom/12608_2.jpg"
 };
 
 const HomeScreen = () => {
-  const { setHisName, setHerName } = React.useContext(AppContext);
+  const { setHisName, setHerName, setNavPage } = React.useContext(AppContext);
 
   return (
     <View style={styles.outline}>
@@ -38,7 +39,10 @@ const HomeScreen = () => {
             backgroundColor: "#fff1f4c0"
           }}
         >
-          <Button title={"Calculate ❤️"} />
+          <Button
+            title={"Calculate ❤️"}
+            onPress={() => setNavPage(APP_PAGES.APP.RESULT_SCREEN)}
+          />
         </View>
       </ImageBackground>
     </View>

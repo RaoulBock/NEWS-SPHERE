@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import HomeScreen from "./components/Screens/HomeScreen";
 import AppProvider, { AppContext } from "./context/AppContext";
 import { APP_PAGES } from "./context/settings";
+import CalculatedScreen from "./components/Screens/CalculatedScreen";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ const NavWrapper = () => {
         translucent={true}
       />
       {navPage === APP_PAGES.APP.HOME && <HomeScreen />}
+      {navPage === APP_PAGES.APP.RESULT_SCREEN && <CalculatedScreen />}
     </>
   );
 };

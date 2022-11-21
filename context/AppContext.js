@@ -36,7 +36,7 @@ const AppProvider = ({ children }) => {
       `https://love-calculator.p.rapidapi.com/getPercentage?sname=${hisName}&fname=${herName}`,
       requestOptions
     )
-      .then((response) => response.text())
+      .then((response) => response.json())
       .then((result) => {
         console.log(result);
         setResults(result);

@@ -8,32 +8,31 @@ import {
 } from "react-native";
 import React from "react";
 import { AppContext } from "../../context/AppContext";
+import Button from "../Button/Button";
+import { APP_PAGES } from "../../context/settings";
 
 const image = {
   uri: "https://images.desenio.com/zoom/12608_2.jpg"
 };
 
 const CalculatedScreen = () => {
-  const { results } = React.useContext(AppContext);
+  const { results, setNavPage } = React.useContext(AppContext);
 
   return (
     <View style={styles.outline}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <View style={styles.header}>
           <Text style={[styles.text, { fontFamily: "Pacifico" }]}>
-            The Love Calculator ❤️
+            Results are out ❤️
           </Text>
-          <Text style={[styles.text, { fontFamily: "Pacifico" }]}>
-            Results came out ❤️
-          </Text>
-          {results.map((e, i) => {
-            return (
-              <View key={i}>
-                <Text>{e.percentage}</Text>
-                <Text>{e.result}</Text>
-              </View>
-            );
-          })}
+          <View style={{}}>
+            <Text style={[styles.perc, { fontFamily: "Pacifico" }]}>
+              {results.percentage}% {results.percentage < 45 ? "😔" : "😊"}
+            </Text>
+            <Text style={[styles.res, { fontFamily: "Pacifico" }]}>
+              {results.result}
+            </Text>
+          </View>
         </View>
         <View
           style={{
@@ -42,7 +41,12 @@ const CalculatedScreen = () => {
             paddingVertical: 15,
             backgroundColor: "#fff1f4c0"
           }}
-        ></View>
+        >
+          <Button
+            title={"Try again ❤️"}
+            onPress={() => setNavPage(APP_PAGES.APP.HOME)}
+          />
+        </View>
       </ImageBackground>
     </View>
   );
@@ -76,5 +80,16 @@ const styles = StyleSheet.create({
     fontSize: 50,
     paddingVertical: 20,
     textAlign: "center"
+  },
+  perc: {
+    textAlign: "center",
+    fontWeight: "500",
+    fontSize: 50,
+    color: "#404040"
+  },
+  res: {
+    textAlign: "center",
+    fontWeight: "500",
+    fontSize: 18
   }
 });
