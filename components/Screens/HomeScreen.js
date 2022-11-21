@@ -28,8 +28,8 @@ const HomeScreen = () => {
           <Text style={[styles.text, { fontFamily: "Pacifico" }]}>
             The Love Calculator ❤️
           </Text>
-          <Input placeholder={"His name"} onChangeText={(e) => setHisName(e)} />
-          <Input placeholder={"Her name"} onChangeText={(e) => setHerName(e)} />
+          <Input placeholder={"Her name"} onChangeText={(e) => setHisName(e)} />
+          <Input placeholder={"His name"} onChangeText={(e) => setHerName(e)} />
         </View>
         <View
           style={{

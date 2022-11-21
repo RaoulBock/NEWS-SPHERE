@@ -15,8 +15,9 @@ const AppProvider = ({ children }) => {
 
   const [hisName, setHisName] = React.useState("");
   const [herName, setHerName] = React.useState("");
-
   const [results, setResults] = React.useState();
+
+  const [quoteList, setQuoteList] = React.useState("");
 
   React.useEffect(() => {
     const myHeaders = new Headers();
@@ -44,6 +45,24 @@ const AppProvider = ({ children }) => {
       .catch((error) => console.log("error", error));
   }, [hisName, herName]);
 
+  React.useEffect(() => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "af913674e8mshd049bcd448bbeabp18f138jsn2ddff479839c",
+        "X-RapidAPI-Host": "love-quote.p.rapidapi.com"
+      }
+    };
+
+    fetch("https://love-quote.p.rapidapi.com/lovequote", options)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        setQuoteList(response);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
     <AppContext.Provider
       value={{
@@ -55,7 +74,9 @@ const AppProvider = ({ children }) => {
         herName,
         setHerName,
         results,
-        setResults
+        setResults,
+        quoteList,
+        setQuoteList
       }}
     >
       {children}
