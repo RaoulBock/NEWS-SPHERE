@@ -16,7 +16,7 @@ const image = {
 };
 
 const CalculatedScreen = () => {
-  const { results, setNavPage, quoteList } = React.useContext(AppContext);
+  const { results, setNavPage } = React.useContext(AppContext);
 
   return (
     <View style={styles.outline}>
@@ -28,10 +28,6 @@ const CalculatedScreen = () => {
           <View style={{}}>
             <Text style={[styles.perc, { fontFamily: "Pacifico" }]}>
               {results.percentage}% {results.percentage < 45 ? "😔" : "😊"}
-            </Text>
-
-            <Text style={[styles.quote, { fontFamily: "Pacifico" }]}>
-              {quoteList.quote}
             </Text>
             <Text style={[styles.res, { fontFamily: "Pacifico" }]}>
               {results.result}
@@ -94,13 +90,6 @@ const styles = StyleSheet.create({
   res: {
     textAlign: "center",
     fontWeight: "500",
-    fontSize: 18
-  },
-  quote: {
-    fontWeight: "500",
-    color: "500",
-    paddingHorizontal: 20,
-    marginVertical: 10,
     fontSize: 18
   }
 });
