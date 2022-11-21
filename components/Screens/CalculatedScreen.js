@@ -2,23 +2,19 @@ import {
   StyleSheet,
   Text,
   View,
+  ImageBackground,
   Platform,
-  StatusBar,
-  TouchableOpacity,
-  ImageBackground
+  StatusBar
 } from "react-native";
-
-import React, { useContext } from "react";
+import React from "react";
 import { AppContext } from "../../context/AppContext";
-import Input from "../Inputs/Input";
-import Button from "../Button/Button";
 
 const image = {
   uri: "https://images.desenio.com/zoom/12608_2.jpg"
 };
 
-const HomeScreen = () => {
-  const { setHisName, setHerName } = React.useContext(AppContext);
+const CalculatedScreen = () => {
+  const { results } = React.useContext(AppContext);
 
   return (
     <View style={styles.outline}>
@@ -27,8 +23,17 @@ const HomeScreen = () => {
           <Text style={[styles.text, { fontFamily: "Pacifico" }]}>
             The Love Calculator ❤️
           </Text>
-          <Input placeholder={"His name"} onChangeText={(e) => setHisName(e)} />
-          <Input placeholder={"Her name"} onChangeText={(e) => setHerName(e)} />
+          <Text style={[styles.text, { fontFamily: "Pacifico" }]}>
+            Results came out ❤️
+          </Text>
+          {results.map((e, i) => {
+            return (
+              <View key={i}>
+                <Text>{e.percentage}</Text>
+                <Text>{e.result}</Text>
+              </View>
+            );
+          })}
         </View>
         <View
           style={{
@@ -37,15 +42,13 @@ const HomeScreen = () => {
             paddingVertical: 15,
             backgroundColor: "#fff1f4c0"
           }}
-        >
-          <Button title={"Calculate ❤️"} />
-        </View>
+        ></View>
       </ImageBackground>
     </View>
   );
 };
 
-export default HomeScreen;
+export default CalculatedScreen;
 
 const styles = StyleSheet.create({
   outline: {

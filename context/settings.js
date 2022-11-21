@@ -1,7 +1,7 @@
 export const APP_PAGES = {
   APP: {
     HOME: "HOME",
-    JOKE_SCREEN: "JOKE_SCREEN"
+    RESULT_SCREEN: "RESULT_SCREEN"
   }
 };
 
