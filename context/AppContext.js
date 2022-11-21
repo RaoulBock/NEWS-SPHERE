@@ -19,14 +19,14 @@ const AppProvider = ({ children }) => {
   const [results, setResults] = React.useState();
 
   React.useEffect(() => {
-    var myHeaders = new Headers();
+    const myHeaders = new Headers();
     myHeaders.append(
       "X-RapidAPI-Key",
       "af913674e8mshd049bcd448bbeabp18f138jsn2ddff479839c"
     );
     myHeaders.append("X-RapidAPI-Host", "love-calculator.p.rapidapi.com");
 
-    var requestOptions = {
+    const requestOptions = {
       method: "GET",
       headers: myHeaders,
       redirect: "follow"
@@ -42,7 +42,7 @@ const AppProvider = ({ children }) => {
         setResults(result);
       })
       .catch((error) => console.log("error", error));
-  }, []);
+  }, [hisName, herName]);
 
   return (
     <AppContext.Provider
