@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "my-app",
+    "name": "The Love Calculator",
     "slug": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/The.png",
       "resizeMode": "contain",
-      "backgroundColor": "#9237d5"
+      "backgroundColor": "#fff1f4c0"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,7 +23,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/The.png",
-        "backgroundColor": "#9237d5"
+        "backgroundColor": "#fff1f4c0"
       },
       "package": "com.raoulbock.myapp"
     },

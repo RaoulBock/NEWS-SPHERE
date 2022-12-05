@@ -12,38 +12,27 @@ const AppProvider = ({ children }) => {
   const [fontsLoaded] = useFonts({
     Pacifico: require("../assets/Fonts/Pacifico-Regular.ttf")
   });
-
-  const [hisName, setHisName] = React.useState("");
-  const [herName, setHerName] = React.useState("");
-  const [results, setResults] = React.useState();
+  const [mainInfo, setMainInfo] = React.useState();
+  const [tab, setTab] = React.useState(0);
+  const [specInfo, setSpecInfo] = React.useState();
 
   React.useEffect(() => {
-    const myHeaders = new Headers();
-    myHeaders.append(
-      "X-RapidAPI-Key",
-      "af913674e8mshd049bcd448bbeabp18f138jsn2ddff479839c"
-    );
-    myHeaders.append("X-RapidAPI-Host", "love-calculator.p.rapidapi.com");
-
-    const requestOptions = {
+    var requestOptions = {
       method: "GET",
-      headers: myHeaders,
       redirect: "follow"
     };
 
     fetch(
-      `https://love-calculator.p.rapidapi.com/getPercentage?sname=${hisName}&fname=${herName}`,
+      "https://newsapi.org/v2/top-headlines?country=us&apiKey=245b4ed876e344d0a083dc5c4604eba9",
       requestOptions
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
-        setResults(result);
+        // console.log(result.articles);
+        setMainInfo(result.articles);
       })
       .catch((error) => console.log("error", error));
-  }, [hisName, herName]);
-
-  React.useEffect(() => {}, []);
+  }, []);
 
   return (
     <AppContext.Provider
@@ -51,12 +40,12 @@ const AppProvider = ({ children }) => {
         navPage,
         setNavPage,
         fontsLoaded,
-        hisName,
-        setHisName,
-        herName,
-        setHerName,
-        results,
-        setResults
+        mainInfo,
+        setMainInfo,
+        tab,
+        setTab,
+        specInfo,
+        setSpecInfo
       }}
     >
       {children}

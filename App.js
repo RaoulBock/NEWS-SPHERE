@@ -3,8 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import HomeScreen from "./components/Screens/HomeScreen";
 import AppProvider, { AppContext } from "./context/AppContext";
 import { APP_PAGES } from "./context/settings";
-import CalculatedScreen from "./components/Screens/CalculatedScreen";
-
+import { StyleSheet, View } from "react-native";
+import SpecScreen from "./components/Screens/SpecScreen";
 function App() {
   return (
     <AppProvider>
@@ -24,17 +24,21 @@ const NavWrapper = () => {
   }, [navPage]);
 
   return (
-    <>
+    <View style={styles.outline}>
       <StatusBar
         style="dark"
-        backgroundColor="#fff1f4c0"
+        backgroundColor="#fff"
         hidden={false}
         translucent={true}
       />
       {navPage === APP_PAGES.APP.HOME && <HomeScreen />}
-      {navPage === APP_PAGES.APP.RESULT_SCREEN && <CalculatedScreen />}
-    </>
+      {navPage === APP_PAGES.APP.RESULT_SCREEN && <SpecScreen />}
+    </View>
   );
 };
-
+const styles = StyleSheet.create({
+  outline: {
+    flex: 1
+  }
+});
 export default App;

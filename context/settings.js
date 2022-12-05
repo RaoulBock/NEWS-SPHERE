@@ -14,7 +14,7 @@ export const APP_ICONS = {
   BOOKMARK: (
     <Ionicons
       name="ios-bookmark-outline"
-      style={{ color: "#333", fontSize: 25 }}
+      style={{ color: "#404040", fontSize: 27 }}
     />
   ),
   BACK: (
@@ -29,13 +29,19 @@ export const APP_ICONS = {
   SEARCH: (
     <Ionicons
       name="ios-search-outline"
-      style={{ color: "#fff", fontSize: 20 }}
+      style={{ color: "#404040", fontSize: 27 }}
     />
   ),
   DISCOVER: (
     <Ionicons
       name="ios-compass-outline"
-      style={{ color: "#fff", fontSize: 20 }}
+      style={{ color: "#404040", fontSize: 27 }}
+    />
+  ),
+  CATEGORIES: (
+    <Ionicons
+      name="ios-albums-outline"
+      style={{ color: "#404040", fontSize: 27 }}
     />
   )
 };
