@@ -20,7 +20,7 @@ const HomeScreen = () => {
     <View style={styles.outline}>
       <Nav title={"Top News"} />
       <View style={{ flex: 1 }}>{tab === 0 && <HomeView />}</View>
-      <BottomNav />
+      {/* <BottomNav /> */}
     </View>
   );
 };

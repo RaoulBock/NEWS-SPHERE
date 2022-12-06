@@ -33,9 +33,9 @@ const Card = ({ item }) => {
           style={styles.image}
         />
       )}
-      <Text style={styles.author}>{item.author}</Text>
-      <Text style={styles.date}>{item.publishedAt}</Text>
-      <Text style={styles.title}>{item.title}</Text>
+      {item.author && <Text style={styles.author}>{item.author}</Text>}
+      {item.publishedAt && <Text style={styles.date}>{item.publishedAt}</Text>}
+      {item.title && <Text style={styles.title}>{item.title}</Text>}
     </TouchableOpacity>
   );
 };

@@ -70,6 +70,7 @@ const BottomNav = () => {
         return (
           <TouchableOpacity key={i} onPress={() => setTab(e.id)}>
             <Text style={styles.icon}>{e.icon}</Text>
+            <Text style={styles.name}>{e.name}</Text>
           </TouchableOpacity>
         );
       })}
@@ -83,14 +84,11 @@ const styles = StyleSheet.create({
   outline: {
     flexDirection: "row",
     alignItems: "center",
-
     padding: 10,
     justifyContent: "space-between",
-    marginHorizontal: 20,
-    backgroundColor: "#eee",
-    marginBottom: 10,
-    borderRadius: 40,
-    paddingHorizontal: 20
+    backgroundColor: "#fafafa",
+    borderTopWidth: 1,
+    borderTopColor: "#eee"
   },
   icon: {
     textAlign: "center"

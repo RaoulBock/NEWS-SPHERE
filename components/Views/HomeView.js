@@ -7,11 +7,13 @@ const HomeView = () => {
   const { mainInfo } = React.useContext(AppContext);
   return (
     <View>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {mainInfo.map((e, i) => {
-          return <Card key={i} item={e} />;
-        })}
-      </ScrollView>
+      {mainInfo && (
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {mainInfo.map((e, i) => {
+            return <Card key={i} item={e} />;
+          })}
+        </ScrollView>
+      )}
     </View>
   );
 };

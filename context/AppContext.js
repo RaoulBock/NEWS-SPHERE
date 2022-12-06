@@ -34,6 +34,8 @@ const AppProvider = ({ children }) => {
       .catch((error) => console.log("error", error));
   }, []);
 
+  React.useEffect(() => {}, []);
+
   return (
     <AppContext.Provider
       value={{

@@ -18,7 +18,10 @@ export const APP_ICONS = {
     />
   ),
   BACK: (
-    <Ionicons name="ios-chevron-back" style={{ color: "#fff", fontSize: 20 }} />
+    <Ionicons
+      name="ios-chevron-back"
+      style={{ color: "#ffff", fontSize: 20 }}
+    />
   ),
   RIGHT: (
     <Ionicons
